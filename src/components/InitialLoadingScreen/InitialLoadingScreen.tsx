@@ -7,9 +7,6 @@ const AnimationDuration = 4;
 function SVGLogo() {
   return (
     <svg version="1.1" id="svg2" width="410" height="410" viewBox="0 0 410 410">
-      <defs>
-        <bxGrid x="0" y="0" width="147.782" height="120.478" />
-      </defs>
       <g
         id="g8"
         transform="matrix(0.383323, 0, 0, -0.321622, -749.241333, 681.874207)"
