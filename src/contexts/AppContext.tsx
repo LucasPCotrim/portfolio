@@ -1,5 +1,15 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
+type State = {
+  page: string;
+};
+export type GlobalContent = {
+  state: State;
+  setState: (s: State) => void;
+};
 
-const AppContext = createContext();
+export const AppContext = createContext<GlobalContent>({
+  state: { page: 'InitialLoadingScreen' },
+  setState: () => {},
+});
 
-export default AppContext;
+export const useAppContext = () => useContext(AppContext);

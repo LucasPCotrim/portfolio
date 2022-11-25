@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import AppContext from '../contexts/AppContext';
+import { AppContext } from '../contexts/AppContext';
 import InitialLoadingScreen from '../components/InitialLoadingScreen/InitialLoadingScreen';
 
 export default function App() {

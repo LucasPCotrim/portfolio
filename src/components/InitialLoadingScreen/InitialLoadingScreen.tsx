@@ -1,5 +1,5 @@
-import { useContext, useEffect } from 'react';
-import AppContext from '../../contexts/AppContext';
+import { useEffect } from 'react';
+import { useAppContext } from '../../contexts/AppContext';
 import styles from './InitialLoadingScreen.module.css';
 
 const AnimationDuration = 4;
@@ -39,7 +39,7 @@ function BackgroundDecoration() {
 }
 
 export default function InitialLoadingScreen() {
-  const { state, setState } = useContext(AppContext);
+  const { state, setState } = useAppContext();
 
   useEffect(() => {
     const initialAnimationTimer = setTimeout(
