@@ -1,0 +1,120 @@
+@keyframes animateSVG {
+  0% {
+    stroke-dashoffset: 28500;
+    fill: transparent;
+  }
+  15% {
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: var(--color-palette-3);
+  }
+}
+@keyframes animateLogoContainer {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(0.65);
+    opacity: 0;
+  }
+}
+@keyframes animateLogoContainerSmall {
+  0% {
+    transform: scale(0.4);
+  }
+  100% {
+    transform: scale(0.3714);
+    opacity: 0;
+  }
+}
+@keyframes animateBackgroundDecoration {
+  0% {
+    transform: rotateZ(45deg) scale(1);
+  }
+  100% {
+    transform: rotateZ(45deg) scale(0);
+  }
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.logo_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.7);
+
+  animation-name: animateLogoContainer;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(1, 0.01, 0.32, 1.05);
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  @media (max-width: 1000px) {
+    transform: scale(0.4);
+    animation-name: animateLogoContainerSmall;
+  }
+}
+.logo_container svg path {
+  stroke-dasharray: 28500;
+  stroke-dashoffset: 28500;
+  stroke-width: 40;
+  animation-name: animateSVG;
+  animation-duration: 4s;
+  animation-timing-function: cubic-bezier(1, 0, 0.54, 1);
+  animation-fill-mode: forwards;
+}
+
+.background_decoration {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+.background_decoration span {
+  --corner-decoration-size: calc(0.25 * min(100vw, 100vh));
+  display: flex;
+  position: absolute;
+  background-color: var(--color-menus);
+  width: var(--corner-decoration-size);
+  height: var(--corner-decoration-size);
+  transform-origin: center;
+  transform: rotateZ(45deg);
+  animation-name: animateBackgroundDecoration;
+  animation-duration: 1s;
+  animation-delay: 3s;
+  animation-timing-function: cubic-bezier(1, 0, 0.54, 1);
+  animation-fill-mode: forwards;
+}
+.background_decoration span:nth-child(1) {
+  top: calc(0% - 0.5 * var(--corner-decoration-size));
+  left: calc(0% - 0.5 * var(--corner-decoration-size));
+}
+.background_decoration span:nth-child(2) {
+  top: calc(0% - 0.5 * var(--corner-decoration-size));
+  left: calc(100% - 0.5 * var(--corner-decoration-size));
+}
+.background_decoration span:nth-child(3) {
+  top: calc(100% - 0.5 * var(--corner-decoration-size));
+  left: calc(100% - 0.5 * var(--corner-decoration-size));
+}
+.background_decoration span:nth-child(4) {
+  top: calc(100% - 0.5 * var(--corner-decoration-size));
+  left: calc(0% - 0.5 * var(--corner-decoration-size));
+}
+
+@media (max-width: 1000px) {
+  .background_decoration {
+    display: none;
+  }
+}

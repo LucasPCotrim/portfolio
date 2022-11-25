@@ -1,3 +1,5 @@
+import '../styles/globals.css';
+
 export default function RootLayout({
   children,
 }: {
@@ -8,7 +10,8 @@ export default function RootLayout({
       <head>
         <title>Lucas Cotrim</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta name="description" content="Portfolio Website" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Lucas Cotrim's Portfolio" />
         <link rel="icon" href="static/favicon.ico" />
       </head>
       <body>{children}</body>
